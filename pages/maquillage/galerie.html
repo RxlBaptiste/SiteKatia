@@ -2,7 +2,10 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover"
+    />
     <title>Galerie – Maquillage | Katia Bulimar</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap"
@@ -17,7 +20,12 @@
   <body>
     <!-- Header -->
     <header>
+      <!-- Bouton burger -->
+      <button class="burger" aria-expanded="false" aria-controls="mainnav">
+        <span></span><span></span><span></span>
+      </button>
       <nav
+        id="mainnav"
         class="nav container castoro-titling-regular"
         aria-label="Navigation principale"
       >
@@ -159,9 +167,7 @@
       </div>
     </footer>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <script src="../../script.js"></script>
     <script>
       const lightbox = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightbox-img");

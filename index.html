@@ -314,10 +314,8 @@
       </div>
     </footer>
 
+    <script src="script.js"></script>
     <script>
-      // MàJ année footer (facultatif, aucun autre JS requis)
-      document.getElementById("year").textContent = new Date().getFullYear();
-
       window.addEventListener("load", () => {
         window.scrollTo(0, 0); // remet la page tout en haut à gauche
         document.querySelectorAll(".carousel").forEach((carousel) => {
@@ -348,18 +346,6 @@
           // On redirige vers une page interne
           window.location.href = "pages/photographie.html";
         });
-    </script>
-    <script>
-      const burger = document.querySelector(".burger");
-      const nav = document.getElementById("mainnav");
-      if (burger && nav) {
-        burger.addEventListener("click", () => {
-          const open = burger.getAttribute("aria-expanded") === "true";
-          burger.setAttribute("aria-expanded", String(!open));
-          nav.classList.toggle("nav--open", !open);
-          document.body.classList.toggle("nav-open", !open);
-        });
-      }
     </script>
   </body>
 </html>

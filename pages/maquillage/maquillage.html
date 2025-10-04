@@ -2,8 +2,10 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Maquillage – Katia Bulimar</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover"
+    /><title>Maquillage – Katia Bulimar</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap"
       rel="stylesheet"
@@ -18,7 +20,12 @@
   <body>
     <!-- Header -->
     <header>
+      <!-- Bouton burger -->
+      <button class="burger" aria-expanded="false" aria-controls="mainnav">
+        <span></span><span></span><span></span>
+      </button>
       <nav
+        id="mainnav"
         class="nav container castoro-titling-regular"
         aria-label="Navigation principale"
       >
@@ -148,6 +155,7 @@ Il reste élégant, mais avec un effet plus "glam" ou affirmé.
       <section class="video-wrap">
         <div class="video" aria-label="Présentation en vidéo">
           <iframe
+          class="VideoYT"
             width="1060"
             height="490"
             src="https://www.youtube.com/embed/QuUlXXPWSxQ"
@@ -217,8 +225,6 @@ Il reste élégant, mais avec un effet plus "glam" ou affirmé.
       </div>
     </footer>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <script src="../../script.js"></script>
   </body>
 </html>

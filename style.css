@@ -218,7 +218,7 @@ footer {
   }
   .burger span {
     display: block;
-    height: 2px;
+    height: 3px;
     width: 100%;
     background: var(--colorB);
     border-radius: 2px;
@@ -620,6 +620,19 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
+/* =========================
+   MOBILE (<= 600px)
+   ========================= */
+@media (max-width: 600px) {
+  .container-title {
+    padding: 0px;
+    padding-top: 100px;
+  }
+  .intro {
+    padding-top: 0;
+    font-size: 16px;
+  }
+}
 
 /*TARIFS*/
 .tarifs-grid {
@@ -691,6 +704,59 @@ li {
   text-decoration: none;
   color: inherit;
 }
+/* =========================
+   MOBILE (<= 600px)
+   ========================= */
+@media (max-width: 600px) {
+  /* La grille principale des deux colonnes devient une seule colonne */
+  .tarifs-grid {
+    grid-template-columns: 1fr;
+    row-gap: 32px; /* espace entre les deux colonnes devenues lignes */
+  }
+
+  /* Les listes de tarifs (dans les 2 cas) : chaque li = 2 colonnes */
+  .tarifs-grid li,
+  .tarifs-grid-solo li {
+    display: grid;
+    grid-template-columns: 1fr auto; /* texte | prix */
+    align-items: start; /* prix aligné en haut de la 1re ligne */
+    column-gap: 12px;
+    padding-bottom: 35px;
+    font-size: 16px;
+  }
+
+  /* Le prix ne se coupe jamais et n’a pas de padding à gauche en mobile */
+  .tarifs-grid .price,
+  .tarifs-grid-solo .price {
+    white-space: nowrap;
+    padding-left: 0;
+    font-size: 16px;
+  }
+
+  /* Titres et listes compactes */
+  h3 {
+    font-size: 24px;
+    text-align: center;
+  }
+  ul {
+    padding: 0;
+  }
+  .tarifs-note {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  /* Bouton en-dessous */
+  .container-btn {
+    margin: 50px 0;
+  }
+  .btn {
+    border: 2px solid var(--colorB);
+    border-radius: 10px;
+    font-size: 24px;
+    padding: 13px;
+  }
+}
 
 /*COMPARATIF*/
 .comparatif {
@@ -744,6 +810,43 @@ h4 {
   color: #ffffff;
   font-size: 35px;
 }
+
+/* =========================
+   MOBILE (<= 600px)
+   ========================= */
+@media (max-width: 600px) {
+  h4 {
+    font-size: 24px;
+    text-align: start;
+  }
+  .comparatif {
+    text-align: center;
+  }
+  .bloc-comparatif {
+    margin: 20px 5px;
+    border: 2px solid var(--colorB);
+    border-radius: 10px;
+  }
+  .txtcomparatif {
+    max-width: 300px;
+  }
+  .bloc-texte {
+    font-size: 12px;
+  }
+  .bloc-visuel {
+    width: 135px;
+    height: 220px;
+  }
+  .placeholder {
+    font-size: 25px;
+  }
+
+  /*+Video*/
+  .video {
+    margin-bottom: 50px;
+  }
+}
+
 /*AFFICHAGE EN PLEIN ECRAN PHOTO*/
 /* Lightbox plein écran */
 .lightbox {
@@ -805,15 +908,6 @@ h4 {
   border: 5px solid #b1b5ae;
   border-radius: 25px;
 }
-/* 
-.inmap {
-  position: absolute;
-  top: 50%; /* ajuste verticalement *
-  left: 52%; /* ajuste horizontalement *
-  transform: translate(-50%, -100%); /* centre la pointe *
-  pointer-events: none; /* pour ne pas bloquer les clics sur la carte *
-  z-index: 1;
-} */
 .suivre {
   text-align: center;
   font-size: 36px;
@@ -825,6 +919,35 @@ h4 {
   justify-content: center;
   align-items: center;
   gap: 20vh;
+}
+
+/* =========================
+   MOBILE (<= 600px)
+   ========================= */
+@media (max-width: 600px) {
+  .bloc-text {
+    font-size: 16px;
+    padding: 0;
+  }
+  h3 {
+    font-size: 24px;
+    padding: 0;
+  }
+
+  /*+Contact*/
+  .map {
+    width: 350px;
+    height: 200px;
+    border: 2px solid var(--colorB);
+    border-radius: 10px;
+  }
+  .img-contact {
+    height: 16px;
+    width: 16px;
+  }
+  .socials-contact {
+    gap: 8vh;
+  }
 }
 
 /*GALERIES*/
@@ -888,6 +1011,14 @@ h4 {
   font-size: 36px;
   padding-top: 0;
   padding-left: 50px;
+}
+/* =========================
+   MOBILE (<= 600px)
+   ========================= */
+@media (max-width: 600px) {
+  .page-title {
+    padding-bottom: 100px;
+  }
 }
 
 /*Politique confidentialité*/
