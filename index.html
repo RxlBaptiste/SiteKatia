@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Katia Bulimar – Maquillage • Coiffure • Photographie</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Polices -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Nunito:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <!-- Bouton burger -->
+      <button class="burger" aria-expanded="false" aria-controls="mainnav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav
+        id="mainnav"
+        class="nav container castoro-titling-regular"
+        aria-label="Navigation principale"
+      >
+        <a class="lienNav active">ACCUEIL</a>
+        <a class="lienNav" href="pages/coiffures/coiffure.html">COIFFURE</a>
+        <a class="lienNav" href="pages/maquillage/maquillage.html"
+          >MAQUILLAGE</a
+        >
+        <a class="lienNav" href="pages/photographie/photographie.html"
+          >PHOTOGRAPHIE</a
+        >
+        <a class="lienNav" href="pages/contact.html">CONTACT</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero container castoro-titling-regular">
+      <section class="title-accueil">
+        <h1>KATIA BULIMAR</h1>
+        <div class="subtitle">
+          MAQUILLAGE
+          <span class="dot-sub">•</span>
+          COIFFURE
+          <span class="dot-sub">•</span>
+          PHOTOGRAPHIE
+        </div>
+      </section>
+
+      <!-- Carrousel photos (cards slider) -->
+      <div class="carousel" aria-label="Galerie photos">
+        <!-- Remplace par tes images -->
+        <div class="card"><span>Photo 1</span></div>
+        <div class="card"><span>Photo 2</span></div>
+        <div class="card"><span>Photo 3</span></div>
+        <div class="card"><span>Photo 4</span></div>
+        <div class="card"><span>Photo 5</span></div>
+        <!-- Duplication des photos -->
+        <div class="card"><span>Photo 1</span></div>
+        <div class="card"><span>Photo 2</span></div>
+        <div class="card"><span>Photo 3</span></div>
+        <div class="card"><span>Photo 4</span></div>
+      </div>
+    </section>
+
+    <!-- Présentation -->
+    <section class="presentation container" id="presentation">
+      <h2 class="section-title castoro-titling-regular">PRÉSENTATION</h2>
+
+      <div class="cols">
+        <div class="portrait">
+          <span>Photo Profil</span>
+        </div>
+
+        <div>
+          <p class="pres-text lora">
+            Je m’appelle Katia Bulimar, et je suis passionnée par l’art du
+            maquillage. J’ai suivi une formation de makeup artist à Toulouse, où
+            j’ai passé une année à explorer et maîtriser le maquillage sous
+            toutes ses formes. Diplômée, je suis retournée dans ma région
+            natale, la Bretagne, avec une ambition claire : créer ma propre
+            entreprise et vivre de ma passion. <br />
+            <br />
+            Pour proposer une expérience complète, je me suis également formée
+            au coiffage de mariée et j’ai obtenu mon certificat. Très vite, je
+            me suis naturellement tournée vers ce qui me touche profondément :
+            révéler la beauté naturelle des femmes, sans artifices excessifs.
+            <br />
+            <br />
+            En côtoyant mon entourage, j’ai constaté à quel point de nombreuses
+            femmes manquent de confiance en elles. Cela m’a poussée à me former
+            à la photographie, afin d’offrir des séances qui allient mise en
+            beauté et valorisation de soi à travers l’image. <br />
+            <br />
+            Aujourd’hui, mon entreprise me ressemble : humaine, bienveillante et
+            portée par les valeurs de sororité et d’authenticité. Je propose des
+            prestations sur mesure pour tous types d’événements : mariages,
+            cours d’auto-maquillage, mises en beauté… mais aussi des séances de
+            photo-thérapie. Car chaque femme mérite de se voir telle qu’elle est
+            : belle, forte et unique.
+          </p>
+        </div>
+      </div>
+      <!-- Badges de certification (non cliquables) -->
+      <div class="badges" aria-label="Certifications et mentions">
+        <span class="badge poppins-regular">
+          <img class="dot" src="assets/medaille.png" />
+          Maquilleuse certifié</span
+        >
+        <span class="badge poppins-regular"
+          ><img class="dot" src="assets/coeur.png" /><span
+            >Spécialiste en beauté nuptiale</span
+          ></span
+        >
+        <span class="badge poppins-regular"
+          ><img class="dot" src="assets/etoile.png" />Produits haut de
+          gamme</span
+        >
+      </div>
+      <!-- Vidéo -->
+      <div class="video" aria-label="Présentation en vidéo">
+        <!-- Remplace l'URL de la vidéo -->
+        <iframe
+          class="VideoYT"
+          width="1060"
+          height="490"
+          src="https://www.youtube.com/embed/QuUlXXPWSxQ"
+          title="Présentation"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+    <!-- Prestations -->
+    <section class="services container" id="prestations">
+      <h2 class="section-title castoro-titling-regular">MES PRESTATIONS</h2>
+      <div class="service-grid">
+        <article class="service" id="serviceMaquillage">
+          <a class="lien-tarif" href="pages/maquillage/maquillage.html">
+            <img
+              class="thumb"
+              src="assets/maquillage.jpg"
+              alt="Maquillage – visuel de démonstration"
+            />
+            <h3 class="subtitleArticle castoro-titling-regular">MAQUILLAGE</h3>
+          </a>
+        </article>
+
+        <article class="service" id="serviceCoiffure">
+          <a class="lien-tarif" href="pages/coiffures/coiffure.html">
+            <img
+              class="thumb"
+              src="assets/coiffure.jpg"
+              alt="Coiffure – visuel de démonstration"
+            />
+            <h3 class="subtitleArticle castoro-titling-regular">COIFFURE</h3>
+          </a>
+        </article>
+
+        <article class="service" id="servicePhotographie">
+          <a class="lien-tarif" href="pages/photographie/photographie.html">
+            <img
+              class="thumb"
+              src="assets/photographie.jpg"
+              alt="Photographie – visuel de démonstration"
+            />
+            <h3 class="subtitleArticle castoro-titling-regular">
+              PHOTOGRAPHIE
+            </h3>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Avis (carrousel de cartes) -->
+    <section class="reviews container" id="avis">
+      <h2 class="section-title castoro-titling-regular">LES AVIS</h2>
+
+      <div class="carousels" aria-label="Avis clients">
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-text lora">
+            “Très professionnelle et à l’écoute. Le résultat était naturel et
+            lumineux.”
+          </div>
+          <!-- 
+          <div class="review-author">— Élodie, mariée</div> -->
+        </article>
+
+        <article class="review-card">
+          <div class="stars">★★★★☆</div>
+          <div class="review-text lora">
+            “Super coiffure pour mon shooting, tenue parfaite toute la journée.”
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-text lora">
+            “ Avis N° 2 : Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Aliquam sollicitudin tincidunt consequat. Pellentesque dapibus
+            cursus justo imperdiet tempus. Aenean sit amet felis condimentum
+            massa fermentum pretium. Nunc nulla metus, auctor sed tempor vitae,
+            auctor et erat. Cras pretium sem varius odio pretium tempus.
+            Interdum et malesuada fames ac ante ipsum primis in faucibus.
+            Curabitur egestas nisl sed lectus sollicitudin bibendum. Phasellus
+            tempor sed justo sit amet dictum.”
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-text lora">
+            “Make-up mariée impeccable, exactement comme je le souhaitais.”
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-text lora">
+            “Make-up mariée impeccable, exactement comme je le souhaitais.”
+          </div>
+        </article>
+        <!-- Duplication -->
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-text lora">
+            “Très professionnelle et à l’écoute. Le résultat était naturel et
+            lumineux.”
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="stars">★★★★☆</div>
+          <div class="review-text lora">
+            “Super coiffure pour mon shooting, tenue parfaite toute la journée.”
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-text lora">
+            “ Avis N° 2 : Lorem ipsum dolor sit amet, consectetur adipiscing
+            elit. Aliquam sollicitudin tincidunt consequat. Pellentesque dapibus
+            cursus justo imperdiet tempus. Aenean sit amet felis condimentum
+            massa fermentum pretium. Nunc nulla metus, auctor sed tempor vitae,
+            auctor et erat. Cras pretium sem varius odio pretium tempus.
+            Interdum et malesuada fames ac ante ipsum primis in faucibus.
+            Curabitur egestas nisl sed lectus sollicitudin bibendum. Phasellus
+            tempor sed justo sit amet dictum.”
+          </div>
+        </article>
+
+        <article class="review-card">
+          <div class="stars">★★★★★</div>
+          <div class="review-text lora">
+            “Make-up mariée impeccable, exactement comme je le souhaitais.”
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container-logo">
+        <img class="logo" src="assets/logo3.png" />
+      </div>
+      <div class="container-text">
+        <div class="footer-links castoro-titling-regular">
+          <a class="lien-footer" href="index.html">ACCUEIL</a> |
+          <a class="lien-footer" href="pages/coiffures/coiffure.html"
+            >COIFFURE</a
+          >
+          |
+          <a class="lien-footer" href="pages/maquillage/maquillage.html"
+            >MAQUILLAGE</a
+          >
+          |
+          <a class="lien-footer" href="pages/photographie/photographie.html"
+            >PHOTOGRAPHIE</a
+          >
+          |
+          <a class="lien-footer" href="pages/contact.html">CONTACT</a>
+        </div>
+        <span class="lora-italic"
+          >Katia Bulimar - Maquilleuse professionnelle</span
+        >
+        <span class="mentions">
+          ©<span id="year"></span> Katia Bulimar — Tous droits réservés |
+          <a class="mention-Rgpd" href="pages/RGPD.html"
+            >Mentions légales - RGPD</a
+          >
+        </span>
+      </div>
+      <div class="container-socials">
+        <div class="socials" aria-label="Réseaux sociaux">
+          <a href="#" aria-label="Instagram">
+            <!-- Instagram (simple) -->
+            <img class="icon insta" src="assets/icons8-instagram-96.png" />
+          </a>
+          <a href="#" aria-label="Facebook">
+            <!-- Facebook (simple) -->
+            <img class="icon f" src="assets/icons8-facebook-96.png" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // MàJ année footer (facultatif, aucun autre JS requis)
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      window.addEventListener("load", () => {
+        window.scrollTo(0, 0); // remet la page tout en haut à gauche
+        document.querySelectorAll(".carousel").forEach((carousel) => {
+          carousel.scrollLeft = 0; // remet le carrousel au début
+        });
+      });
+
+      //Redirection vers les prestation
+
+      // On récupère la div
+      document
+        .getElementById("serviceCoiffure")
+        .addEventListener("click", () => {
+          // On redirige vers une page interne
+          window.location.href = "pages/coiffure.html";
+        });
+      // On récupère la div
+      document
+        .getElementById("serviceMaquillage")
+        .addEventListener("click", () => {
+          // On redirige vers une page interne
+          window.location.href = "pages/maquillage.html";
+        });
+      // On récupère la div
+      document
+        .getElementById("servicePhotographie")
+        .addEventListener("click", () => {
+          // On redirige vers une page interne
+          window.location.href = "pages/photographie.html";
+        });
+    </script>
+    <script>
+      const burger = document.querySelector(".burger");
+      const nav = document.getElementById("mainnav");
+      if (burger && nav) {
+        burger.addEventListener("click", () => {
+          const open = burger.getAttribute("aria-expanded") === "true";
+          burger.setAttribute("aria-expanded", String(!open));
+          nav.classList.toggle("nav--open", !open);
+          document.body.classList.toggle("nav-open", !open);
+        });
+      }
+    </script>
+  </body>
+</html>

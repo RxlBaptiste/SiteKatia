@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact – Katia Bulimar</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Nunito:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav
+        class="nav container castoro-titling-regular"
+        aria-label="Navigation principale"
+      >
+        <a class="lienNav" href="../index.html">ACCUEIL</a>
+        <a class="lienNav" href="./coiffures/coiffure.html">COIFFURE</a>
+        <a class="lienNav" href="./maquillage/maquillage.html">MAQUILLAGE</a>
+        <a class="lienNav" href="./photographie/photographie.html"
+          >PHOTOGRAPHIE</a
+        >
+        <a class="lienNav active" href="./contact.html">CONTACT</a>
+      </nav>
+    </header>
+
+    <main class="container-title">
+      <!-- Titre -->
+      <section class="hero-page castoro-titling-regular">
+        <h1 class="page-title">CONTACT</h1>
+      </section>
+
+      <!-- Coordonnées -->
+      <section class="intro">
+        <p class="lora">
+          <strong>Je suis à votre écoute pour toute demande :</strong>
+        </p>
+
+        <p class="lora">
+          <img class="img-contact" src="../assets/mail arobase.png" />
+          <a class="mail" href="mailto:katia.bulimar@yahoo.com"
+            >katia.bulimar@yahoo.com</a
+          >
+        </p>
+        <p class="lora">
+          <img class="img-contact" src="../assets/phone.png" />
+          <a class="tel" href="tel:+33670825037">06 70 82 50 37</a>
+        </p>
+        <p class="lora">
+          <img class="img-contact" src="../assets/loc.png" /> Basée près de
+          Lamballe, Bretagne
+        </p>
+      </section>
+
+      <!-- Carte -->
+      <section class="video-wrap">
+        <div class="video" aria-label="Localisation (carte)">
+          <iframe
+            class="map"
+            src="https://www.google.com/maps?q=48.468,-2.514&z=10&hl=fr&output=embed"
+            width="50%"
+            height="320px"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </section>
+
+      <!-- Réseaux sociaux -->
+      <section class="comparatif">
+        <h2 class="lora suivre">Suivez-moi aussi sur les réseaux :</h2>
+        <div class="socials-contact" aria-label="Réseaux sociaux">
+          <a href="#" aria-label="Facebook">
+            <img
+              class="icon f"
+              src="../assets/icons8-facebook-96.png"
+              alt="Facebook"
+            />
+          </a>
+          <a href="#" aria-label="Instagram">
+            <img
+              class="icon insta"
+              src="../assets/icons8-instagram-96.png"
+              alt="Instagram"
+            />
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container-logo">
+        <img class="logo" src="../assets/logo3.png" alt="Logo Katia Bulimar" />
+      </div>
+
+      <div class="container-text">
+        <div class="footer-links castoro-titling-regular">
+          <a class="lien-footer" href="../index.html">ACCUEIL</a> |
+          <a class="lien-footer" href="./maquillage/maquillage.html"
+            >MAQUILLAGE</a
+          >
+          |
+          <a class="lien-footer" href="./coiffures/coiffure.html">COIFFURE</a> |
+          <a class="lien-footer" href="./photographie/photographie.html"
+            >PHOTOGRAPHIE</a
+          >
+          |
+          <a class="lien-footer" href="./contact.html">CONTACT</a>
+        </div>
+
+        <span class="lora-italic"
+          >Katia Bulimar - Maquilleuse professionnelle</span
+        >
+
+        <span class="mentions">
+          © <span id="year"></span> Katia Bulimar — Tous droits réservés |
+          <a class="mention-Rgpd" href="./RGPD.html">Mentions légales - RGPD</a>
+        </span>
+      </div>
+
+      <div class="container-socials">
+        <div class="socials" aria-label="Réseaux sociaux">
+          <a href="#" aria-label="Instagram">
+            <img
+              class="icon insta"
+              src="../assets/icons8-instagram-96.png"
+              alt="Instagram"
+            />
+          </a>
+          <a href="#" aria-label="Facebook">
+            <img
+              class="icon f"
+              src="../assets/icons8-facebook-96.png"
+              alt="Facebook"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
