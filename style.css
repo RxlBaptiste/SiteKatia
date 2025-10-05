@@ -93,7 +93,7 @@ footer {
 
 .mention-Rgpd {
   color: inherit;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .socials {
@@ -108,6 +108,71 @@ footer {
 .f {
   height: 90px;
   width: 90px;
+}
+/* =========================
+   TABLETTE(601px - 1024px)
+   ========================= */
+@media (min-width: 601px) and (max-width: 1500px) and (orientation: portrait) {
+  footer {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* gauche | centre | droite */
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  /* Logo à gauche */
+  .container-logo {
+    justify-content: flex-start;
+    padding-left: 10px;
+  }
+  .logo {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Texte au centre (liens + baseline + mentions) */
+  .container-text {
+    grid-column: 1 / 4;
+    grid-row: 2;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-links {
+    font-size: 16px;
+    justify-content: center;
+    gap: 6px;
+  } /* 
+  .lien-footer {
+    padding: 0;
+  }
+  .lora-italic {
+    font-size: 9px;
+  }
+  .mentions {
+    font-size: 10px;
+    margin: 6px 0 8px;
+  } */
+
+  /* Réseaux à droite (en ligne) */
+  .container-socials {
+    grid-column: 3 / 4;
+    justify-content: flex-end;
+    padding-right: 10px;
+  }
+  .socials {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+  .insta {
+    width: 50px;
+    height: 50px;
+  }
+  .f {
+    width: 56px;
+    height: 56px;
+  }
 }
 /* =========================
    MOBILE (<= 600px)
@@ -194,6 +259,58 @@ footer {
   text-decoration: none;
 }
 
+/* =========================
+   TABLETTE(601px - 1024px)
+   ========================= */
+@media (min-width: 601px) and (max-width: 1500px) {
+  .burger {
+    display: block;
+  }
+  .burger {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+    width: 28px;
+    height: 24px;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+  }
+  .burger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: var(--colorB);
+    border-radius: 2px;
+  }
+  /* cache la nav en mobile par défaut */
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #fff;
+    padding: 50px 12px 10px; /* 50px pour passer sous le burger */
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    transform: translateY(-100%);
+    transition: transform 0.25s ease;
+    font-size: 20px;
+  }
+  .nav--open {
+    transform: translateY(0);
+  }
+  .nav a {
+    padding: 8px 6px;
+  }
+}
 /* =========================
    MOBILE (<= 600px)
    ========================= */
@@ -393,6 +510,38 @@ h1 {
   margin: 0 0 0 0;
 }
 /* =========================
+   TABLETTE(601px - 1024px)
+   ========================= */
+@media (min-width: 601px) and (max-width: 1500px) and (orientation: portrait) {
+  .section-title {
+    font-size: 26px;
+    margin-top: 100px;
+    margin-bottom: 40px;
+  }
+
+  .cols {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr;
+  }
+
+  .portrait {
+    height: 350px;
+    width: 95%;
+    margin: 0;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 2px solid var(--colorB);
+  }
+  .pres-text {
+    width: 100%;
+    font-size: 20px;
+    text-align: justify;
+    margin: 0 0 0 0;
+    height: auto;
+  }
+}
+/* =========================
    MOBILE (<= 600px)
    ========================= */
 @media (max-width: 600px) {
@@ -455,6 +604,40 @@ h1 {
   display: flex;
   justify-content: center;
   margin-top: 150px;
+}
+/* =========================
+   TABLETTE(601px - 1024px)
+   ========================= */
+@media (min-width: 601px) and (max-width: 1500px) {
+  .badge {
+    width: 250px;
+    height: 100px;
+    font-size: 15px;
+    margin-top: 50px;
+  }
+  .dot {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (min-width: 601px) and (max-width: 1500px) and (orientation: portrait) {
+  .title-accueil {
+    text-align: center;
+  }
+  h1 {
+    height: auto;
+  }
+  .badge {
+    width: 200px;
+    height: 100px;
+    font-size: 15px;
+    margin-top: 50px;
+    text-align: center;
+  }
+  .dot {
+    width: 50px;
+    height: 50px;
+  }
 }
 /* =========================
    MOBILE (<= 600px)
@@ -584,6 +767,24 @@ h1 {
 }
 
 /* =========================
+   TABLETTE(601px - 1024px)
+   ========================= */
+@media (min-width: 601px) and (max-width: 1500px) /* and (orientation: portrait) */ {
+  .carousels {
+    animation: scroll-avis 35s linear infinite;
+    width: calc(300px * 12);
+  }
+
+  @keyframes scroll-avis {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-2000px);
+    }
+  }
+}
+/* =========================
    MOBILE (<= 600px)
    ========================= */
 @media (max-width: 600px) {
@@ -705,6 +906,76 @@ li {
   color: inherit;
 }
 /* =========================
+   TABLETTE(601px - 1024px)
+   ========================= */
+@media (min-width: 601px) and (max-width: 1500px) {
+  .tarifs-grid {
+    row-gap: 32px; /* espace entre les deux colonnes devenues lignes */
+  }
+
+  /* Les listes de tarifs (dans les 2 cas) : chaque li = 2 colonnes */
+  .tarifs-grid li,
+  .tarifs-grid-solo li {
+    display: grid;
+    grid-template-columns: 1fr auto; /* texte | prix */
+    align-items: start; /* prix aligné en haut de la 1re ligne */
+    column-gap: 12px;
+    padding-bottom: 35px;
+  }
+
+  /* Le prix ne se coupe jamais et n’a pas de padding à gauche en mobile */
+  .tarifs-grid .price,
+  .tarifs-grid-solo .price {
+    white-space: nowrap;
+    padding-left: 0;
+  }
+
+  /* Titres et listes compactes */
+  h3 {
+    text-align: center;
+  }
+  ul {
+    padding: 0;
+  }
+  .tarifs-note {
+    text-align: center;
+  }
+}
+@media (min-width: 601px) and (max-width: 1500px) and (orientation: portrait) {
+  .tarifs-grid {
+    grid-template-columns: 1fr;
+    row-gap: 32px; /* espace entre les deux colonnes devenues lignes */
+  }
+
+  /* Les listes de tarifs (dans les 2 cas) : chaque li = 2 colonnes */
+  .tarifs-grid li,
+  .tarifs-grid-solo li {
+    display: grid;
+    grid-template-columns: 1fr auto; /* texte | prix */
+    align-items: start; /* prix aligné en haut de la 1re ligne */
+    column-gap: 12px;
+    padding-bottom: 35px;
+  }
+
+  /* Le prix ne se coupe jamais et n’a pas de padding à gauche en mobile */
+  .tarifs-grid .price,
+  .tarifs-grid-solo .price {
+    white-space: nowrap;
+    padding-left: 0;
+  }
+
+  /* Titres et listes compactes */
+  h3 {
+    text-align: center;
+  }
+  ul {
+    padding: 0;
+  }
+  .tarifs-note {
+    text-align: center;
+  }
+}
+/* =========================
    MOBILE (<= 600px)
    ========================= */
 @media (max-width: 600px) {
@@ -812,6 +1083,45 @@ h4 {
 }
 
 /* =========================
+   TABLETTE(601px - 1024px)
+   ========================= */
+@media (min-width: 601px) and (max-width: 1500px) and (orientation: portrait) {
+  .page-title {
+    font-size: 85px;
+  }
+
+  .comparatif {
+    text-align: center;
+  }
+  .bloc-comparatif {
+    margin: 20px 5px;
+    border: 2px solid var(--colorB);
+    border-radius: 10px;
+  }
+  .txtcomparatif {
+    max-width: 300px;
+  }
+  .bloc-texte {
+    font-size: 20px;
+  }
+  .bloc-visuel {
+    width: 200px;
+    height: 350px;
+  }
+  .placeholder {
+    font-size: 25px;
+  }
+}
+/* =========================
+   TABLETTE(601px - 1024px)
+   ========================= */
+@media (min-width: 601px) and (max-width: 1500px) {
+  .section-title {
+    text-align: center;
+    font-size: 50px;
+  }
+}
+/* =========================
    MOBILE (<= 600px)
    ========================= */
 @media (max-width: 600px) {
@@ -885,6 +1195,14 @@ h4 {
   padding: 0 300px;
 }
 
+/* =========================
+   TABLETTE(601px - 1024px)
+   ========================= */
+@media (min-width: 601px) and (max-width: 1500px) and (orientation: portrait) {
+  .bloc-text {
+    padding: 0;
+  }
+}
 /*CONTACT*/
 .mail,
 .tel {
@@ -921,6 +1239,17 @@ h4 {
   gap: 20vh;
 }
 
+/* =========================
+   TABLETTE(601px - 1024px)
+   ========================= */
+@media (min-width: 601px) and (max-width: 1500px) and (orientation: portrait) {
+  .map {
+    width: 85%;
+  }
+  .socials-contact {
+    gap: 10vh;
+  }
+}
 /* =========================
    MOBILE (<= 600px)
    ========================= */
@@ -984,6 +1313,23 @@ h4 {
   margin-bottom: 80px;
 }
 
+/* =========================
+   TABLETTE(601px - 1024px)
+   ========================= */
+@media (min-width: 601px) and (max-width: 1500px) {
+  .sr-only {
+    width: 500px;
+  }
+}
+/* =========================
+   TABLETTE(601px - 1024px)
+   ========================= */
+@media (min-width: 601px) and (max-width: 1500px) and (orientation: portrait) {
+  .sr-only {
+    width: 275px;
+    height: 550px;
+  }
+}
 /* =========================
    MOBILE (<= 600px)
    ========================= */
