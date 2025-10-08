@@ -1014,9 +1014,10 @@ li {
 /* =========================
    TABLETTE(601px - 1024px)
    ========================= */
+
 @media (min-width: 601px) and (max-width: 1500px) {
   .tarifs {
-    margin: 0 100px;
+    margin: 0 60px;
   }
   .tarifs-grid {
     row-gap: 32px; /* espace entre les deux colonnes devenues lignes */
@@ -1085,6 +1086,7 @@ li {
   }
   .tarifs-note {
     text-align: center;
+    font-size: 23px;
   }
 }
 /* =========================
@@ -1093,8 +1095,9 @@ li {
 @media (max-width: 600px) {
   .tarifs {
     background-color: var(--colorB);
-    margin: 0;
+    margin: 0 25px;
     height: auto;
+    padding: 0 20px;
   }
 
   /* La grille principale des deux colonnes devient une seule colonne */
@@ -1213,9 +1216,9 @@ iframe {
     font-size: 85px;
   }
 
-  .comparatif {
+  /* .comparatif {
     text-align: center;
-  }
+  } */
   .bloc-comparatif {
     margin: 20px 5px;
     border: 2px solid var(--colorB);
@@ -1229,7 +1232,7 @@ iframe {
   }
   .bloc-visuel {
     width: 200px;
-    height: 350px;
+    height: auto;
   }
   .placeholder {
     font-size: 25px;
