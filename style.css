@@ -1,8 +1,8 @@
 /*Import Font-Family */
 @import url("https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 /*Varible*/
 :root {
@@ -11,7 +11,7 @@
 
 /*BODY*/
 body {
-  background-color: #ffffff;
+  background-color: #f4f7f2;
   color: var(--colorB);
   overflow-x: hidden;
 }
@@ -19,10 +19,24 @@ body {
   font-family: "Castoro Titling", serif;
   font-weight: 400;
   font-style: normal;
+  color: black;
 }
-.lora {
-  font-family: "Lora", serif;
-  font-optical-sizing: auto;
+.castoro-regular {
+  font-family: "Castoro", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.lato-regular {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: black;
+}
+.lato-regular-italic {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  color: black;
 }
 
 .poppins-regular {
@@ -38,7 +52,7 @@ header {
   left: 0; /* Collé à gauche */
   width: 100%; /* Prend toute la largeur */
   z-index: 1000; /* Toujours au-dessus du contenu */
-  background: white; /* Donne une couleur de fond pour ne pas que le texte disparaisse */
+  background: #f4f7f2; /* Donne une couleur de fond pour ne pas que le texte disparaisse */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* petit effet d’ombre sous la nav */
 }
 
@@ -72,6 +86,7 @@ footer {
 .footer-links {
   display: flex;
   font-size: 24px;
+  color: var(--colorB);
 }
 .lora-italic {
   padding-top: 5px;
@@ -81,8 +96,8 @@ footer {
 }
 
 .lien-footer {
+  color: var(--colorB);
   padding: 0 20px;
-  color: inherit;
   text-decoration: none;
 }
 
@@ -323,20 +338,26 @@ footer {
     top: 10px;
     left: 10px;
     z-index: 1100;
-    width: 28px;
-    height: 24px;
+    width: 45px;
+    height: 45px;
     display: inline-flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    gap: 5px;
+    gap: 7px;
     background: transparent;
     border: 0;
-    padding: 0;
+    padding: 9px 7px;
     cursor: pointer;
+
+    background-color: white;
+    box-shadow: 2px 3px 6px rgba(197, 197, 197, 100);
+    border-radius: 8px;
   }
   .burger span {
     display: block;
-    height: 3px;
-    width: 100%;
+    height: 4px;
+    width: 75%;
     background: var(--colorB);
     border-radius: 2px;
   }
@@ -421,7 +442,7 @@ h1 {
 }
 
 .card {
-  height: 500px;
+  height: auto;
   width: 490px;
   border: 5px solid var(--colorB);
   border-radius: 25px;
@@ -429,6 +450,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  object-fit: contain;
 }
 
 .carousel:hover {
@@ -454,7 +476,7 @@ h1 {
   }
   .card {
     width: 200px;
-    height: 200px;
+    height: auto;
     border-radius: 10px;
     border: 2px solid var(--colorB);
   }
@@ -482,7 +504,20 @@ h1 {
   justify-content: center;
   font-weight: 100;
 }
-
+.title_presentation {
+  margin-bottom: 0px;
+  margin-top: 120px;
+  font-size: 85px;
+  display: flex;
+  justify-content: center;
+  font-weight: 100;
+}
+.subtitle_presentation {
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 120px;
+}
 .cols {
   display: grid;
   grid-template-columns: 35% 50%;
@@ -490,24 +525,30 @@ h1 {
   grid-column-gap: 196px;
   grid-row-gap: 0px;
   justify-items: center;
+  align-items: center;
 }
 
 .portrait {
   display: flex;
   justify-content: center;
-  height: 800px;
+  height: auto;
   width: 100%;
   margin: 0 0 0 200px;
   border: 5px solid var(--colorB);
   border-radius: 25px;
+  object-fit: contain;
 }
 
 .pres-text {
-  height: 800px;
+  height: auto;
   width: 90%;
   font-size: 24px;
   text-align: justify;
   margin: 0 0 0 0;
+  background-color: var(--colorB);
+  border-radius: 25px;
+  padding: 1em;
+  color: white;
 }
 /* =========================
    TABLETTE(601px - 1024px)
@@ -550,7 +591,16 @@ h1 {
     margin-top: 100px;
     margin-bottom: 40px;
   }
-
+  .title_presentation {
+    margin-bottom: 0;
+    font-size: 26px;
+    margin-top: 100px;
+  }
+  .subtitle_presentation {
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
   .cols {
     display: grid;
     grid-template-columns: 1fr;
@@ -558,7 +608,7 @@ h1 {
   }
 
   .portrait {
-    height: 230px;
+    height: auto;
     width: 100%;
     margin: 0;
     margin-bottom: 30px;
@@ -566,11 +616,11 @@ h1 {
     border: 2px solid var(--colorB);
   }
   .pres-text {
-    width: 100%;
-    font-size: 12px;
-    text-align: justify;
-    margin: 0 0 0 0;
     height: auto;
+    width: auto;
+    font-size: 12px;
+    text-align: center;
+    margin: 0;
   }
 }
 
@@ -669,12 +719,13 @@ h1 {
 }
 
 /*PRESTATIONS*/
-.lien-tarif {
-  color: inherit;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.title_white {
+  color: white;
+}
+.services {
+  background-color: var(--colorB);
+  border-radius: 25px;
+  margin: 0 150px;
 }
 
 .service-grid {
@@ -687,6 +738,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 4em;
 }
 
 .thumb {
@@ -700,7 +752,21 @@ h1 {
 }
 
 .subtitleArticle {
+  margin-top: 0.8em;
+  color: black;
+  background-color: white;
+  text-decoration: none;
   font-size: 32px;
+  border-radius: 18px;
+  padding: 0.2em 0.8em;
+  border: none;
+  box-shadow: 5px 10px 4px rgba(0, 0, 0, 0.25);
+}
+
+.subtitleArticle:hover {
+  box-shadow: none;
+  transform: translate(2px, 4px);
+  background-color: #f1f1f1;
 }
 
 /* =========================
@@ -715,6 +781,9 @@ h1 {
   }
   .subtitleArticle {
     font-size: 14px;
+  }
+  .services {
+    margin: 0;
   }
 }
 /*AVIS*/
@@ -836,7 +905,13 @@ h1 {
 }
 
 /*TARIFS*/
+.tarifs {
+  background-color: var(--colorB);
+  margin: 0 150px;
+  border-radius: 25px;
+}
 .tarifs-grid {
+  color: white;
   display: grid;
   justify-items: center;
   align-items: center;
@@ -845,13 +920,16 @@ h1 {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
-
 .tarifs-grid-solo {
+  color: white;
   display: grid;
   justify-items: center;
   align-items: center;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+}
+h2 {
+  font-weight: 400 !important;
 }
 h3 {
   padding-bottom: 55px;
@@ -862,16 +940,19 @@ ul {
   list-style: none;
 }
 li {
-  font-family: "Lora", serif;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
   font-optical-sizing: auto;
   font-size: 24px;
   padding-bottom: 55px;
   display: flex;
   justify-content: space-between;
 }
-
 .price {
-  font-family: "Lora", serif;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: italic;
   font-optical-sizing: auto;
   font-weight: bold;
   font-size: 24px;
@@ -882,7 +963,11 @@ li {
   display: flex;
   justify-content: center;
   font-size: 24px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
   font-style: italic;
+  color: white;
+  padding-bottom: 2em;
 }
 
 .container-btn {
@@ -892,18 +977,22 @@ li {
   margin-top: 200px;
 }
 
-:hover.btn {
-  background-color: #b1b5ae;
-  color: #ffffff;
-}
 .btn {
-  border: 5px solid #b1b5ae;
-  border-radius: 25px;
-  padding: 25px;
-  font-weight: bold;
-  font-size: 36px;
+  margin-top: 0.8em;
+  color: white;
+  background-color: var(--colorB);
   text-decoration: none;
-  color: inherit;
+  font-size: 25px;
+  border-radius: 18px;
+  padding: 0.8em 1.5em;
+  border: none;
+  box-shadow: 5px 10px 4px rgba(107, 107, 107, 0.25);
+}
+
+.btn:hover {
+  box-shadow: none;
+  transform: translate(2px, 4px);
+  background-color: var(--colorB);
 }
 /* =========================
    TABLETTE(601px - 1024px)
@@ -979,6 +1068,11 @@ li {
    MOBILE (<= 600px)
    ========================= */
 @media (max-width: 600px) {
+  .tarifs {
+    background-color: var(--colorB);
+    margin: 0;
+  }
+
   /* La grille principale des deux colonnes devient une seule colonne */
   .tarifs-grid {
     grid-template-columns: 1fr;
@@ -1040,10 +1134,11 @@ h4 {
   font-size: 36px;
   margin: 0;
   padding: 25px 0;
+  color: black;
 }
 
 .bloc-comparatif {
-  border: 5px solid #b1b5ae;
+  border: 5px solid black;
   border-radius: 25px;
   padding: 25px;
   margin: 40px;
@@ -1074,14 +1169,18 @@ h4 {
   border: 5px solid #d9d9d9;
   border-radius: 25px;
   width: 450px;
-  height: 410px;
+  height: auto;
+  object-fit: contain;
 }
 
 .placeholder {
   color: #ffffff;
   font-size: 35px;
 }
-
+iframe {
+  border-radius: 25px;
+  border: 5px solid var(--colorB);
+}
 /* =========================
    TABLETTE(601px - 1024px)
    ========================= */
@@ -1295,6 +1394,7 @@ h4 {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   justify-items: center;
+  align-items: center;
 }
 
 .gallery-grid > *:last-child:nth-child(odd) {
@@ -1311,6 +1411,9 @@ h4 {
   text-align: center;
   font-size: 50px;
   margin-bottom: 80px;
+
+  object-fit: contain;
+  height: auto;
 }
 
 /* =========================
@@ -1327,7 +1430,7 @@ h4 {
 @media (min-width: 601px) and (max-width: 1500px) and (orientation: portrait) {
   .sr-only {
     width: 275px;
-    height: 550px;
+    height: auto;
   }
 }
 /* =========================
@@ -1348,7 +1451,7 @@ h4 {
   }
   .sr-only {
     width: 170px;
-    height: 250px;
+    height: auto;
     border-radius: 10px;
     font-size: 24px;
   }
@@ -1421,4 +1524,33 @@ h4 {
     font-size: 18px;
     padding-left: 15px;
   }
+}
+
+/* ========================
+   ========================
+    PARTIE ADMINISTRATEUR
+   ========================
+   ======================== 
+*/
+
+.bandeau_admin {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  margin-bottom: 1em;
+  background-color: #b1b5ae;
+  color: #ffffff;
+}
+
+.btn_bd {
+  background-color: #ffffff;
+  color: var(--colorB);
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  padding: 5px 10px;
+}
+
+.btn_bd:hover {
+  background-color: var(--colorB);
+  color: #ffffff;
 }
