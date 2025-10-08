@@ -310,7 +310,7 @@ footer {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: #fff;
+    background-color: #f4f7f2;
     padding: 50px 12px 10px; /* 50px pour passer sous le burger */
     display: grid;
     grid-template-columns: 1fr;
@@ -368,7 +368,7 @@ footer {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: #fff;
+    background-color: #f4f7f2;
     padding: 50px 12px 10px; /* 50px pour passer sous le burger */
     display: grid;
     grid-template-columns: 1fr;
