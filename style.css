@@ -286,20 +286,26 @@ footer {
     top: 10px;
     left: 10px;
     z-index: 1100;
-    width: 28px;
-    height: 24px;
+    width: 45px;
+    height: 45px;
     display: inline-flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    gap: 5px;
+    gap: 7px;
     background: transparent;
     border: 0;
-    padding: 0;
+    padding: 9px 7px;
     cursor: pointer;
+
+    background-color: white;
+    box-shadow: 2px 3px 6px rgba(197, 197, 197, 100);
+    border-radius: 8px;
   }
   .burger span {
     display: block;
-    height: 3px;
-    width: 100%;
+    height: 4px;
+    width: 75%;
     background: var(--colorB);
     border-radius: 2px;
   }
@@ -517,6 +523,7 @@ h1 {
   display: flex;
   justify-content: center;
   margin-bottom: 120px;
+  text-align: center;
 }
 .cols {
   display: grid;
@@ -567,7 +574,7 @@ h1 {
   }
 
   .portrait {
-    height: 350px;
+    height: auto;
     width: 95%;
     margin: 0;
     margin-bottom: 30px;
@@ -575,10 +582,10 @@ h1 {
     border: 2px solid var(--colorB);
   }
   .pres-text {
-    width: 100%;
+    width: auto;
     font-size: 20px;
-    text-align: justify;
-    margin: 0 0 0 0;
+    text-align: center;
+    margin: 0;
     height: auto;
   }
 }
@@ -770,6 +777,19 @@ h1 {
 }
 
 /* =========================
+   TABLETTE(601px - 1024px)
+   ========================= */
+@media (min-width: 601px) and (max-width: 1500px) and (orientation: portrait) {
+  .subtitleArticle {
+    font-size: 28px;
+  }
+}
+@media (min-width: 601px) and (max-width: 1500px) {
+  .services {
+    margin: 0;
+  }
+}
+/* =========================
    MOBILE (<= 600px)
    ========================= */
 @media (max-width: 600px) {
@@ -781,9 +801,6 @@ h1 {
   }
   .subtitleArticle {
     font-size: 14px;
-  }
-  .services {
-    margin: 0;
   }
 }
 /*AVIS*/
@@ -998,6 +1015,9 @@ li {
    TABLETTE(601px - 1024px)
    ========================= */
 @media (min-width: 601px) and (max-width: 1500px) {
+  .tarifs {
+    margin: 0 100px;
+  }
   .tarifs-grid {
     row-gap: 32px; /* espace entre les deux colonnes devenues lignes */
   }
@@ -1031,6 +1051,9 @@ li {
   }
 }
 @media (min-width: 601px) and (max-width: 1500px) and (orientation: portrait) {
+  .bloc-visuel {
+    height: auto;
+  }
   .tarifs-grid {
     grid-template-columns: 1fr;
     row-gap: 32px; /* espace entre les deux colonnes devenues lignes */
@@ -1071,6 +1094,7 @@ li {
   .tarifs {
     background-color: var(--colorB);
     margin: 0;
+    height: auto;
   }
 
   /* La grille principale des deux colonnes devient une seule colonne */
@@ -1494,9 +1518,32 @@ iframe {
 /* =========================
    TABLETTE(601px - 1024px)
    ========================= */
+@media (min-width: 601px) and (max-width: 1500px) and (orientation: landscape) {
+  .legal_landscape {
+    margin-top: 25em;
+  }
+}
 @media (min-width: 601px) and (max-width: 1500px) {
-  .legal {
-    margin-top: 80px;
+  .page-title {
+    padding-bottom: 100px;
+  }
+  .section-title {
+    text-align: center;
+  }
+
+  .legal-box {
+    border: 2px solid var(--colorB);
+    border-radius: 10px;
+    width: 95%;
+    padding: 5px;
+  }
+  .h3-mentions {
+    font-size: 28px;
+    text-align: start;
+  }
+  .text-legal {
+    font-size: 24px;
+    padding-left: 15px;
   }
 }
 /* =========================
