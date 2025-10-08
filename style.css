@@ -793,6 +793,9 @@ h1 {
    MOBILE (<= 600px)
    ========================= */
 @media (max-width: 600px) {
+  .services {
+    margin: 0;
+  }
   .thumb {
     border-radius: 10px;
     border: 3px solid var(--colorB);
