@@ -1265,7 +1265,6 @@ iframe {
   .page-title {
     font-size: 85px;
   }
-
   /* .comparatif {
     text-align: center;
   } */
@@ -1295,6 +1294,10 @@ iframe {
   .section-title {
     text-align: center;
     font-size: 50px;
+  }
+  .sections_sociaux {
+    margin: 0 12%;
+    margin-top: 50px;
   }
 }
 /* =========================
