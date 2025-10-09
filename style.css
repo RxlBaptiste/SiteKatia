@@ -391,7 +391,8 @@ footer {
 /*HERO*/
 .hr {
   border: 4px solid black;
-  margin: 0 100px;
+  margin: 0 auto;
+  width: 90%;
 }
 h1 {
   font-size: 128px;
@@ -483,8 +484,9 @@ h1 {
 @media (max-width: 600px) {
   .hr {
     border: 2px solid black;
-    margin: 0 35px;
+    margin: 0 auto;
     margin-top: 20px;
+    width: 85%;
   }
   .carousel {
     width: calc(300px * 8);
@@ -1197,7 +1199,6 @@ li {
 .sections_sociaux {
   display: flex;
   flex-direction: column;
-  margin: 0 35%;
   margin-top: 50px;
   padding: 0 49px;
   width: max-content;
@@ -1309,8 +1310,9 @@ iframe {
     text-align: center;
   }
   .sections_sociaux {
+    width: -webkit-fill-available;
     margin: 0 3%;
-    padding: 0 25px;
+    padding: 10px 25px;
   }
   .suivre {
     font-size: 24px;
@@ -1390,6 +1392,16 @@ iframe {
   }
 }
 /*CONTACT*/
+.container-title-contact {
+  /* padding: 200px 0; */
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrap-map {
+  width: -webkit-fill-available;
+}
 .mail,
 .tel {
   color: inherit;
@@ -1414,7 +1426,8 @@ iframe {
 }
 .suivre {
   text-align: center;
-  font-size: 36px;
+  font-size: 25px;
+  margin: 0;
 }
 .comparatifs .socials-contact {
   display: flex;
