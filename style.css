@@ -11,7 +11,7 @@
 
 /*BODY*/
 body {
-  background-color: #f4f7f2;
+  background-color: #faf7f2;
   color: var(--colorB);
   overflow-x: hidden;
 }
@@ -81,18 +81,15 @@ footer {
   justify-content: center;
   align-items: center;
   margin-block-start: inherit;
+  color: var(--colorB);
 }
-
+.colorB {
+  color: var(--colorB);
+}
 .footer-links {
   display: flex;
   font-size: 24px;
   color: var(--colorB);
-}
-.lora-italic {
-  padding-top: 5px;
-  font-family: "Lora", serif;
-  font-optical-sizing: auto;
-  font-style: italic;
 }
 
 .lien-footer {
@@ -102,6 +99,7 @@ footer {
 }
 
 .mentions {
+  color: var(--colorB);
   margin-top: auto;
   margin-bottom: 10px;
 }
@@ -316,7 +314,7 @@ footer {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: #f4f7f2;
+    background-color: #faf7f2;
     padding: 50px 12px 10px; /* 50px pour passer sous le burger */
     display: grid;
     grid-template-columns: 1fr;
@@ -374,7 +372,7 @@ footer {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: #f4f7f2;
+    background-color: #faf7f2;
     padding: 50px 12px 10px; /* 50px pour passer sous le burger */
     display: grid;
     grid-template-columns: 1fr;
@@ -391,13 +389,17 @@ footer {
   }
 }
 /*HERO*/
-
+.hr {
+  border: 4px solid black;
+  margin: 0 100px;
+}
 h1 {
   font-size: 128px;
   font-weight: 100;
   display: flex;
   justify-content: center;
   margin-bottom: 0;
+  margin-top: 0;
   height: 130px;
 }
 
@@ -405,6 +407,9 @@ h1 {
   padding: 200px 0;
 }
 
+.autrepage {
+  padding-bottom: 60px;
+}
 .subtitle {
   font-size: 32px;
   display: flex;
@@ -449,9 +454,9 @@ h1 {
 
 .card {
   height: auto;
-  width: 490px;
-  border: 5px solid var(--colorB);
-  border-radius: 25px;
+  width: 490px; /* 
+  border: 5px solid var(--colorB); */
+  border-radius: 130px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -476,6 +481,11 @@ h1 {
    MOBILE (<= 600px)
    ========================= */
 @media (max-width: 600px) {
+  .hr {
+    border: 2px solid black;
+    margin: 0 35px;
+    margin-top: 20px;
+  }
   .carousel {
     width: calc(300px * 8);
     animation: scroll-photos 18s linear infinite;
@@ -509,11 +519,13 @@ h1 {
   display: flex;
   justify-content: center;
   font-weight: 100;
+  text-align: center;
+  margin: 0 50px;
 }
 .title_presentation {
   margin-bottom: 0px;
   margin-top: 120px;
-  font-size: 85px;
+  font-size: 120px;
   display: flex;
   justify-content: center;
   font-weight: 100;
@@ -523,7 +535,17 @@ h1 {
   display: flex;
   justify-content: center;
   margin-bottom: 120px;
+  margin-left: 350px;
+  margin-right: 350px;
   text-align: center;
+}
+.subtitle_preintro {
+  margin-left: 350px;
+  margin-right: 350px;
+  text-align: center;
+}
+.txt_photo {
+  margin: 55px 0;
 }
 .cols {
   display: grid;
@@ -593,6 +615,10 @@ h1 {
    MOBILE (<= 600px)
    ========================= */
 @media (max-width: 600px) {
+  .subtitle_preintro {
+    text-align: center;
+    margin: 0;
+  }
   .section-title {
     font-size: 26px;
     margin-top: 100px;
@@ -606,6 +632,8 @@ h1 {
   .subtitle_presentation {
     font-size: 10px;
     text-align: center;
+    width: 80%;
+    margin: 0 30px;
     margin-bottom: 50px;
   }
   .cols {
@@ -646,6 +674,7 @@ h1 {
   height: 150px;
   width: 380px;
   padding: 0 25px;
+  padding-bottom: 50px;
   border-radius: 80px;
   background-color: var(--colorB);
   color: #ffffff;
@@ -732,7 +761,7 @@ h1 {
 .services {
   background-color: var(--colorB);
   border-radius: 25px;
-  margin: 0 150px;
+  margin: 100px 150px;
 }
 
 .service-grid {
@@ -764,8 +793,8 @@ h1 {
   background-color: white;
   text-decoration: none;
   font-size: 32px;
-  border-radius: 18px;
-  padding: 0.2em 0.8em;
+  border-radius: 25px;
+  padding: 0.8em 1em;
   border: none;
   box-shadow: 5px 10px 4px rgba(0, 0, 0, 0.25);
 }
@@ -899,11 +928,13 @@ h1 {
 }
 /*PAGE COIFFURE*/
 .container-title {
-  padding: 200px 0;
+  /* 
+  padding: 200px 0; */
+  padding-top: 60px;
 }
 
 .intro {
-  padding-top: 200px;
+  padding-top: 40px;
   font-size: 32px;
   text-align: center;
   display: flex;
@@ -916,7 +947,7 @@ h1 {
 @media (max-width: 600px) {
   .container-title {
     padding: 0px;
-    padding-top: 100px;
+    padding-top: 25px;
   }
   .intro {
     padding-top: 0;
@@ -925,20 +956,23 @@ h1 {
 }
 
 /*TARIFS*/
-.tarifs {
+.tarif-col {
   background-color: var(--colorB);
-  margin: 0 150px;
+  margin: 10px 100px;
   border-radius: 25px;
+  padding: 30px;
+  width: 50%;
 }
 .tarifs-grid {
   color: white;
   display: grid;
   justify-items: center;
   align-items: center;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(minmax(280px, 1fr));
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  padding-top: 100px;
 }
 .tarifs-grid-solo {
   color: white;
@@ -952,9 +986,9 @@ h2 {
   font-weight: 400 !important;
 }
 h3 {
-  padding-bottom: 55px;
   font-weight: bold;
   font-size: 36px;
+  text-align: center;
 }
 ul {
   list-style: none;
@@ -965,7 +999,7 @@ li {
   font-style: normal;
   font-optical-sizing: auto;
   font-size: 24px;
-  padding-bottom: 55px;
+  padding-bottom: 15px;
   display: flex;
   justify-content: space-between;
 }
@@ -994,13 +1028,12 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 200px;
 }
 
 .btn {
   margin-top: 0.8em;
-  color: white;
-  background-color: var(--colorB);
+  color: black;
+  background-color: white;
   text-decoration: none;
   font-size: 25px;
   border-radius: 18px;
@@ -1012,7 +1045,7 @@ li {
 .btn:hover {
   box-shadow: none;
   transform: translate(2px, 4px);
-  background-color: var(--colorB);
+  background-color: white;
 }
 /* =========================
    TABLETTE(601px - 1024px)
@@ -1097,10 +1130,11 @@ li {
    ========================= */
 @media (max-width: 600px) {
   .tarifs {
+    /* 
     background-color: var(--colorB);
     margin: 0 25px;
     height: auto;
-    padding: 0 20px;
+    padding: 0 20px; */
   }
 
   /* La grille principale des deux colonnes devient une seule colonne */
@@ -1132,6 +1166,7 @@ li {
   h3 {
     font-size: 24px;
     text-align: center;
+    color: white !important;
   }
   ul {
     padding: 0;
@@ -1146,7 +1181,6 @@ li {
     margin: 50px 0;
   }
   .btn {
-    border: 2px solid var(--colorB);
     border-radius: 10px;
     font-size: 24px;
     padding: 13px;
@@ -1157,14 +1191,27 @@ li {
 .comparatif {
   display: flex;
   flex-direction: column;
+  padding-top: 50px;
+}
+
+.sections_sociaux {
+  display: flex;
+  flex-direction: column;
+  margin: 0 35%;
+  margin-top: 50px;
+  padding: 0 49px;
+  width: max-content;
+  border: 5px solid var(--colorB);
+  border-radius: 25px;
 }
 
 h4 {
   font-weight: bold;
-  font-size: 36px;
+  font-size: 110px;
   margin: 0;
   padding: 25px 0;
   color: black;
+  text-align: center;
 }
 
 .bloc-comparatif {
@@ -1256,7 +1303,14 @@ iframe {
 @media (max-width: 600px) {
   h4 {
     font-size: 24px;
-    text-align: start;
+    text-align: center;
+  }
+  .sections_sociaux {
+    margin: 0 3%;
+    padding: 0 25px;
+  }
+  .suivre {
+    font-size: 24px;
   }
   .comparatif {
     text-align: center;
@@ -1274,7 +1328,7 @@ iframe {
   }
   .bloc-visuel {
     width: 135px;
-    height: 220px;
+    height: auto;
   }
   .placeholder {
     font-size: 25px;
@@ -1358,10 +1412,8 @@ iframe {
 .suivre {
   text-align: center;
   font-size: 36px;
-  padding-top: 80px;
 }
-
-.socials-contact {
+.comparatifs .socials-contact {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1490,7 +1542,6 @@ iframe {
 /*RGPD*/
 .page-title {
   text-align: center;
-  padding-bottom: 350px;
 }
 
 .legal {
@@ -1556,9 +1607,9 @@ iframe {
    MOBILE (<= 600px)
    ========================= */
 @media (max-width: 600px) {
-  .page-title {
+  /* .page-title {
     padding-bottom: 100px;
-  }
+  } */
   .section-title {
     text-align: center;
   }
