@@ -1131,13 +1131,13 @@ li {
    MOBILE (<= 600px)
    ========================= */
 @media (max-width: 600px) {
-  .tarifs {
-    /* 
+  /* .tarifs {
+    
     background-color: var(--colorB);
     margin: 0 25px;
     height: auto;
-    padding: 0 20px; */
-  }
+    padding: 0 20px;
+  } */
 
   /* La grille principale des deux colonnes devient une seule colonne */
   .tarifs-grid {
