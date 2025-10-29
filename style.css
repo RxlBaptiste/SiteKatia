@@ -591,6 +591,17 @@ h1 {
     margin-bottom: 40px;
   }
 
+  .subtitle_preintro {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  .title_presentation {
+    font-size: 100px;
+  }
+  .subtitle_presentation {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
   .cols {
     display: grid;
     grid-template-columns: 1fr;
@@ -817,7 +828,7 @@ h1 {
 }
 @media (min-width: 601px) and (max-width: 1500px) {
   .services {
-    margin: 0;
+    margin: 100px 0;
   }
 }
 /* =========================
@@ -936,7 +947,7 @@ h1 {
 }
 
 .intro {
-  padding-top: 40px;
+  padding: 40px;
   font-size: 32px;
   text-align: center;
   display: flex;
@@ -1081,6 +1092,7 @@ li {
   /* Titres et listes compactes */
   h3 {
     text-align: center;
+    color: white !important;
   }
   ul {
     padding: 0;
@@ -1118,6 +1130,7 @@ li {
   /* Titres et listes compactes */
   h3 {
     text-align: center;
+    color: white !important;
   }
   ul {
     padding: 0;
