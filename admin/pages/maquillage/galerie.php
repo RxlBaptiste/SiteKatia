@@ -49,7 +49,7 @@ if (!isset($_SESSION['pseudo'])) {
             <a class="lienNav" href="../contact.php">CONTACT</a>
 
             <button class="btn_nav_bd"><a class="nav-logout" aria-label="Se déconnecter"
-                    href="../logout.php">Déconnexion</a></button>
+                    href="../../logout.php">Déconnexion</a></button>
         </nav>
     </header>
 

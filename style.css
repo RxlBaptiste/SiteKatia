@@ -1772,6 +1772,14 @@ body.admin #mainnav a {
     display: block;
   }
 }
+@media (min-width: 601px) and (max-width: 1500px) and (orientation: landscape) {
+  .logout-btn {
+    display: none;
+  }
+  .nav-logout {
+    display: block;
+  }
+}
 .btn_nav_bd {
   background-color: #ffffff;
   color: var(--colorB);
