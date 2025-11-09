@@ -1,0 +1,190 @@
+<?php
+// auth.php
+declare(strict_types=1);
+session_start();
+require __DIR__ . '../../db.php';
+
+
+// Si pas connecté → renvoyer vers la page du formulaire (index.html)
+if (!isset($_SESSION['pseudo'])) {
+    header('Location: ../index.php'); 
+    exit;
+}
+
+$profile = $pdo->query("SELECT * FROM company_profile WHERE id = 1")->fetch(PDO::FETCH_ASSOC);
+
+?>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Espace administrateur du site Katia Bulimar. Accès réservé.">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover" />
+    <title>
+        Mentions légales & Politique de confidentialité | Katia Bulimar
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Nunito:wght@300;400;600&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body class="<?= isset($_SESSION['pseudo']) ? 'admin' : '' ?>">
+    <!-- Header -->
+    <header>
+        <!-- Bouton burger -->
+        <button class="burger" aria-expanded="false" aria-controls="mainnav">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="bandeau_admin">
+            <section><button class="btn_nav_bd "><a class="logout-btn" aria-label="Se déconnecter"
+                        href="../logout.php">Déconnexion</a></button></section>
+            <section>Conecter en tant que : <?= htmlspecialchars($_SESSION['pseudo'], ENT_QUOTES, 'UTF-8') ?></section>
+        </div>
+        <nav id="mainnav" class="nav container castoro-titling-regular" aria-label="Navigation principale">
+            <a class="lienNav" href="../modifier/index.php">ACCUEIL</a>
+            <a class="lienNav" href="maquillage/maquillage.php">MAQUILLAGE</a>
+            <a class="lienNav" href="coiffure/coiffure.php">COIFFURE</a>
+            <a class="lienNav" href="photographie/photographie.php">PHOTOGRAPHIE</a>
+            <a class="lienNav" href="contact.php">CONTACT</a>
+
+            <button class="btn_nav_bd"><a class="nav-logout" aria-label="Se déconnecter"
+                    href="../logout.php">Déconnexion</a></button>
+        </nav>
+    </header>
+
+    <main class="container-title">
+        <section class="hero container">
+
+            <!-- Titre principal -->
+            <section class="title-accueil page-rgpd castoro-titling-regular">
+                <h1 class="page-title">
+                    MENTIONS LÉGALES &amp; POLITIQUE DE CONFIDENTIALITÉ
+                </h1>
+            </section>
+            <!-- Mentions légales -->
+            <section class="container-title legal legal_landscape">
+                <h2 class="section-title castoro-titling-regular">MENTION LÉGALES</h2>
+
+                <article class="legal-box lato-regular">
+                    <h3 class="h3-mentions">1. Éditeur du site</h3>
+                    <p class="lato-regular text-legal">
+                        <strong>Nom :</strong> <?php echo $profile['company_name']; ?><br />
+                        <strong>Statut :</strong> <?php echo $profile['legal_status']; ?><br />
+                        <strong>Numéro de SIRET :</strong> <?php echo $profile['siret']; ?><br />
+                        <strong>Adresse professionnelle :</strong>
+                        <?php echo $profile['address_line1']; ?> &nbsp <?php echo $profile['postal_code'];?> &nbsp
+                        <?php echo $profile['city']; ?><br />
+                        <strong>Téléphone :</strong> <?php echo $profile['phone']; ?><br />
+                        <strong>Adresse mail :</strong> katia.bulimar@yahoo.com<br />
+                        <strong>Directrice de la publication :</strong> Katia Bulimar
+                    </p>
+
+                    <h3 class="h3-mentions">2. Hébergement</h3>
+                    <p class="lato-regular text-legal">
+                        Le site est hébergé par :<br />
+                        <?php echo $profile['host_name']; ?><br />
+                        <?php echo $profile['host_address']; ?><br />
+                        <?php echo $profile['host_website']; ?>
+                    </p>
+                </article>
+            </section>
+
+            <!-- Politique de confidentialité -->
+            <section class="legal">
+                <h2 class="section-title castoro-titling-regular">
+                    POLITIQUE DE CONFIDENTIALITÉ – RGPD
+                </h2>
+
+                <article class="legal-box rgpd lato-regular">
+                    <h3 class="h3-mentions">1. Collecte des données personnelles</h3>
+                    <p class="lato-regular text-legal">
+                        Ce site ne collecte aucune donnée personnelle via formulaire ou
+                        inscription. Les visiteurs ne sont pas suivis ni enregistrés par le
+                        site. Cependant, si vous contactez la prestataire par email, vos
+                        données seront utilisées uniquement pour répondre à votre demande.
+                        Elles ne seront ni cédées, ni utilisées à d’autres fins
+                        commerciales. En cliquant sur l’adresse email ou les icônes des
+                        réseaux sociaux (Facebook, Instagram), l’utilisateur est redirigé
+                        vers des services tiers. Toute prise de contact via ces canaux se
+                        fait hors du site, mais les données échangées (nom, message, adresse
+                        email) peuvent être considérées comme personnelles. Elles sont
+                        utilisées uniquement pour répondre à votre demande et ne sont en
+                        aucun cas partagées.
+                    </p>
+
+                    <h3 class="h3-mentions">2. Contenus intégrés (YouTube)</h3>
+                    <p class="lato-regular text-legal">
+                        Certaines pages intègrent des vidéos hébergées sur YouTube. Ces
+                        vidéos peuvent déposer des cookies tiers (Google/YouTube),
+                        susceptibles de collecter des données telles que votre adresse IP ou
+                        votre comportement de navigation. Dans la mesure du possible, les
+                        vidéos sont intégrées via le domaine youtube-nocookie.com pour
+                        limiter le dépôt automatique de cookies.
+                    </p>
+
+                    <h3 class="h3-mentions">3. Cookies</h3>
+                    <p class="lato-regular text-legal">
+                        Le site ne dépose aucun cookie de suivi interne. Un bandeau
+                        d'information vous alerte de la présence éventuelle de contenus
+                        embarqués pouvant utiliser des cookies (YouTube).
+                    </p>
+
+                    <h3 class="h3-mentions">4. Vos droits</h3>
+                    <p class="lato-regular text-legal">
+                        Conformément au Règlement Général sur la Protection des Données
+                        (RGPD), vous disposez d’un droit d'accès, de rectification, de
+                        suppression ou d'opposition concernant vos données personnelles.
+                        <br />Pour toute demande, vous pouvez écrire à :
+                        <a class="mail" href="mailto:katia.bulimar@yahoo.com">katia.bulimar@yahoo.com</a>.
+                    </p>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-logo">
+            <img class="logo" src="../../assets/logo3.png" alt="Logo Katia Bulimar" />
+        </div>
+
+        <div class="container-text">
+            <div class="footer-links castoro-titling-regular">
+                <a class="lien-footer" href="../modifier/index.php">ACCUEIL</a> |
+                <a class="lien-footer" href="maquillage/maquillage.php">MAQUILLAGE</a>
+                |
+                <a class="lien-footer" href="coiffure/coiffure.php">COIFFURE</a> |
+                <a class="lien-footer" href="photographie/photographie.php">PHOTOGRAPHIE</a>
+                |
+                <a class="lien-footer" href="contact.php">CONTACT</a>
+            </div>
+
+            <span class="lora-italic">Katia Bulimar - Maquilleuse professionnelle</span>
+
+            <span class="mentions">
+                © <span id="year"></span> Katia Bulimar — Tous droits réservés |
+                <a class="mention-Rgpd" href="./RGPD.php">Mentions légales - RGPD</a>
+            </span>
+        </div>
+
+        <div class="container-socials">
+            <div class="socials" aria-label="Réseaux sociaux">
+                <a href="#" aria-label="Instagram">
+                    <img class="icon insta" src="../../assets/icons8-instagram-96.png" alt="Instagram" />
+                </a>
+                <a href="#" aria-label="Facebook">
+                    <img class="icon f" src="../../assets/icons8-facebook-96.png" alt="Facebook" />
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+
+</html>
