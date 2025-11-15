@@ -68,7 +68,7 @@ $profile = $pdo->query("SELECT * FROM company_profile WHERE id = 1")->fetch(PDO:
                 <a class="mail" href="mailto:katia.bulimar@yahoo.com">katia.bulimar@yahoo.com</a>
             </p>
             <p class="lato-regular">
-                <img class="img-contact" src="../../assets/phoneBlack.png" />
+                <img class="img-contact" src="../assets/phoneBlack.png" />
                 <a class="tel" href="tel:<?php echo $profile['phone']; ?>"> <?php echo $profile['phone']; ?></a>
             </p>
             <p class="lato-regular">

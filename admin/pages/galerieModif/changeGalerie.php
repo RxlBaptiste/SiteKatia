@@ -431,9 +431,10 @@ $photosStmt = $pdo->prepare("
 
     .modal__panel {
         position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
+        left: 35%;
+        top: 35%;
+        /* 
+        transform: translate(-50%, -50%); */
         width: min(520px, 92%);
         background: #fff;
         border-radius: 14px;
