@@ -341,21 +341,21 @@ function public_url_from_db(string $path): string {
         .getElementById("serviceCoiffure")
         .addEventListener("click", () => {
             // On redirige vers une page interne
-            window.location.href = "pages/coiffure.html";
+            window.location.href = "pages/coiffure/coiffure.php";
         });
     // On récupère la div
     document
         .getElementById("serviceMaquillage")
         .addEventListener("click", () => {
             // On redirige vers une page interne
-            window.location.href = "pages/maquillage.html";
+            window.location.href = "pages/maquillage/maquillage.php";
         });
     // On récupère la div
     document
         .getElementById("servicePhotographie")
         .addEventListener("click", () => {
             // On redirige vers une page interne
-            window.location.href = "pages/photographie.html";
+            window.location.href = "pages/photographie/photographie.php";
         });
     </script>
 </body>
