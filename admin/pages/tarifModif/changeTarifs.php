@@ -481,7 +481,7 @@ if (!isset($_SESSION['pseudo'])) {
                             if ((int)$serv['price'] === 0) {
                               echo 'Sur devis';
                             } else {
-                              echo htmlspecialchars($serv['price']) . ' €';
+                              echo htmlspecialchars((string)$serv['price']) . ' €';
                             }
                             ?>
                         </div>

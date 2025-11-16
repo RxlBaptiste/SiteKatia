@@ -2,7 +2,22 @@
 // auth.php
 declare(strict_types=1);
 session_start();
-require __DIR__ . '../../../db.php';
+require __DIR__ . '/../../db.php';
+
+
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+$baseName = $pdo->query("SELECT DATABASE()")->fetchColumn();
+echo "<!-- DEBUG BASE: " . htmlspecialchars($baseName) . " -->";
+
+$nbCatsMaquillage = $pdo
+    ->query("SELECT COUNT(*) FROM categories WHERE type = 'maquillage'")
+    ->fetchColumn();
+echo "<!-- DEBUG CATEGORIES MAQUILLAGE: " . (int)$nbCatsMaquillage . " -->";
+
+
+
 
 
 // Si pas connecté → renvoyer vers la page du formulaire (index.html)
@@ -56,19 +71,19 @@ if (!isset($_SESSION['pseudo'])) {
 
     <!-- Titre page -->
     <!-- Hero -->
-    <section class="hero container castoro-titling-regular">
-        <section class="title-accueil autrepage">
-            <h1>KATIA BULIMAR</h1>
-            <div class="subtitle lato-regular">
-                MAQUILLAGE
-                <span class="dot-sub">|</span>
-                COIFFURE
-                <span class="dot-sub">|</span>
-                PHOTOGRAPHIE
-            </div>
-        </section>
-        <hr class="hr">
-        <main class="container-title">
+    <main class="container-title">
+        <section class="hero container castoro-titling-regular">
+            <section class="title-accueil autrepage">
+                <h1>KATIA BULIMAR</h1>
+                <div class="subtitle lato-regular">
+                    MAQUILLAGE
+                    <span class="dot-sub">|</span>
+                    COIFFURE
+                    <span class="dot-sub">|</span>
+                    PHOTOGRAPHIE
+                </div>
+            </section>
+            <hr class="hr">
             <section class="hero-page castoro-titling-regular">
                 <h1 class="page-title">MAQUILLAGE</h1>
             </section>
@@ -112,7 +127,7 @@ if (!isset($_SESSION['pseudo'])) {
                             if ((int)$serv['price'] === 0) {
                               echo 'Sur devis';
                             } else {
-                              echo htmlspecialchars($serv['price']) . ' €';
+                              echo htmlspecialchars((string)$serv['price']) . ' €';
                             }
                             ?></span></li>
                             <?php } ?>
@@ -172,7 +187,7 @@ if (!isset($_SESSION['pseudo'])) {
                         allowfullscreen></iframe>
                 </div>
             </section>
-        </main>
+    </main>
     </section>
 
     <!-- Footer -->

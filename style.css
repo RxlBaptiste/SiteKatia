@@ -1369,6 +1369,7 @@ iframe {
   }
   .txtcomparatif {
     max-width: 300px;
+    hyphens: auto;
   }
   .bloc-texte {
     font-size: 12px;
