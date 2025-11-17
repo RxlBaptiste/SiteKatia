@@ -163,20 +163,24 @@ $imgIntimiste = $rows['intimiste'] ?? 'images/photo-intimiste-default.jpg';
                             <img src="<?= htmlspecialchars($imgIntimiste, ENT_QUOTES, 'UTF-8') ?>"
                                 alt="Exemple de photo intimiste" class="bloc-visuel"></img>
                             <p class="txtcomparatif lato-regular">
-                                Chaque femme est une œuvre d’art. À travers mes séances intimiste,
-                                je célèbre votre beauté, votre force et votre singularité. Mon
-                                approche repose sur le respect, la bienveillance et l’écoute, pour
-                                vous offrir un espace où vous pourrez vous sentir en confiance,
-                                pleinement vous-même. Je bloque systématiquement une journée
-                                entière afin de créer une expérience unique, sans précipitation,
-                                où chaque détail est soigné pour révéler votre éclat naturel. Que
-                                ce soit dans l’intimité de votre domicile ou dans mon studio, je
-                                vous guide avec douceur pour capturer des images élégantes,
-                                artistiques et profondément personnelles. À l’issue de la séance,
-                                vous pourrez choisir un minimum de 10 photos, retouchées et
-                                envoyées en haute définition, au format numérique. Mon objectif
-                                est simple : que vous repartiez avec bien plus que de belles
-                                images  : une nouvelle confiance et un regard rempli de fierté sur
+                                À travers mes séances intimistes, je révèle votre beauté naturelle avec douceur et
+                                authenticité. Mon approche repose sur le respect, la bienveillance et l’écoute, afin de
+                                vous offrir un espace où vous pouvez vous sentir pleinement vous-même, en confiance,
+                                sans précipitation.
+                                <br>
+                                <br>
+                                Chaque détail est soigneusement pensé pour sublimer votre singularité.
+                                Que la séance ait lieu chez vous, dans votre cocon, ou à mon domicile, je vous
+                                accompagne étape par étape pour créer des images élégantes, artistiques et profondément
+                                personnelles.
+                                <br>
+                                <br>
+                                À l’issue de la séance, vous sélectionnez un minimum de 10 photos, retouchées avec soin
+                                et livrées en haute définition, au format numérique.
+                                <br>
+                                <br>
+                                Mon objectif va bien au-delà de la photographie :
+                                vous permettre de repartir avec une nouvelle confiance et un regard rempli de fierté sur
                                 votre propre beauté.
                             </p>
                         </div>
