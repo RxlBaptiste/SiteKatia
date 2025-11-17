@@ -490,18 +490,12 @@ h1 {
 }
 
 .card {
-  /*
-  height: auto;
-  width: 490px;  
-  //border: 5px solid var(--colorB); 
-  border-radius: 130px;*/
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   object-fit: contain;
   /* La forme de la carte */
-  /* width: 490px; */
   height: 600px; /* Ajustez la hauteur selon vos goûts */
   border-radius: 130px; /* L'arrondi se fait ici */
   overflow: hidden; /* Coupe tout ce qui dépasse de l'arrondi */
@@ -541,16 +535,27 @@ h1 {
     width: 85%;
   }
   .carousel {
-    width: calc(300px * 8);
+    width: 2400px;
     animation: scroll-photos 18s linear infinite;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    display: flex;
+    justify-content: flex-start;
   }
   .card {
     width: 200px;
-    height: auto;
+    height: 450px;
     border-radius: 50px;
-    /*border: 2px solid var(--colorB);*/
+    margin: 0 15px; /* Ajout d'une marge pour l'espacement */
+    flex-shrink: 0; /*Important si ce n'est pas hérité */
+    overflow: hidden;
   }
-
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que l'image ne se déforme pas et remplit la carte */
+    display: block;
+  }
   @keyframes scroll-photos {
     0% {
       transform: translateX(0);

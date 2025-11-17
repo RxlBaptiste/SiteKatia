@@ -34,8 +34,13 @@ require __DIR__ . '/admin/db.php';
     <meta property="og:title" content="Katia Bulimar – Maquillage, Coiffure & Photographie">
     <meta property="og:description"
         content="Découvrez les prestations de Katia Bulimar : maquillage, coiffure et photographie. Un univers de beauté, d’élégance et de créativité.">
-    <meta property="og:url" content="https://www.katiabulimar.fr/">
-    <meta property="og:image" content="https://www.katiabulimar.fr/images/og-cover.jpg">
+    <meta property="og:url" content="https://www.katiabulimar.fr/"><?php
+$stmt = $pdo->query("SELECT profil_image FROM company_profile LIMIT 1");
+$profile = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$image = $profile['profil_image'] ?? 'images/default-profil.jpg'; // fallback
+?>
+    <meta property="og:image" content="https://www.katiabulimar.fr/admin/<?= htmlspecialchars($image) ?>">
     <meta property="og:site_name" content="Katia Bulimar">
     <meta property="og:locale" content="fr_FR">
 
@@ -46,7 +51,13 @@ require __DIR__ . '/admin/db.php';
     <meta name="twitter:title" content="Katia Bulimar – Maquillage, Coiffure & Photographie">
     <meta name="twitter:description"
         content="Découvrez l’univers de Katia Bulimar, maquilleuse, coiffeuse et photographe professionnelle.">
-    <meta name="twitter:image" content="https://www.katiabulimar.fr/images/og-cover.jpg">
+    <?php
+$stmt = $pdo->query("SELECT profil_image FROM company_profile LIMIT 1");
+$profile = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$image = $profile['profil_image'] ?? 'images/default-profil.jpg'; // fallback
+?>
+    <meta name="twitter:image" content="https://www.katiabulimar.fr/admin/<?= htmlspecialchars($image) ?>">
     <meta name="twitter:creator" content="@katiabulimar">
 
     <!-- ===========================
@@ -154,7 +165,7 @@ function public_url_from_db(string $path): string {
               $src = public_url_from_db($img['curent_image_url']);?>
                 <!-- Carrousel photos (cards slider) -->
                 <div class="card">
-                    <img src="<?= htmlspecialchars($src, ENT_QUOTES) ?>"></img>
+                    <img class="card" src="<?= htmlspecialchars($src, ENT_QUOTES) ?>"></img>
                 </div>
                 <?php endforeach; ?>
                 <!-- Duplication des photos -->
@@ -164,7 +175,7 @@ function public_url_from_db(string $path): string {
               foreach ($images as $img):
               $src = public_url_from_db($img['curent_image_url']); ?>
                 <div class="card">
-                    <img src="<?= htmlspecialchars($src, ENT_QUOTES) ?>"></img>
+                    <img class="card" src="<?= htmlspecialchars($src, ENT_QUOTES) ?>"></img>
                 </div>
                 <?php endforeach; ?>
             </div>
