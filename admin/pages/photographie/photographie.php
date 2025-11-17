@@ -126,6 +126,9 @@ if (!isset($_SESSION['pseudo'])) {
 
                 <article class="bloc-comparatif">
                     <h4 class="lato-regular">Portrait</h3>
+                        <section class="container_admin"><a href="photographie_exemple.php"
+                                class="btn_bd_inv">Modifier</a>
+                        </section>
                         <div class="bloc-texte">
                             <p class="txtcomparatif lato-regular">
                                 Et si vous preniez un moment rien que pour vous ? Que ce soit pour
@@ -138,15 +141,27 @@ if (!isset($_SESSION['pseudo'])) {
                                 prestation inclut un minimum de 8 photos en haute définition,
                                 légèrement retouchées, envoyées en format numérique selon votre
                                 choix.</p>
-                            <img src="../../../assets/photos/carousel2.jpeg" class="bloc-visuel"></img>
+                            <?php
+$stmt = $pdo->prepare("
+    SELECT name, image_path
+    FROM photo_examples
+    WHERE name IN ('portrait', 'intimiste')
+");
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+$imgPortrait    = $rows['portrait']     ?? 'images/photo-portait-default.jpg';
+$imgIntimiste = $rows['intimiste'] ?? 'images/photo-intimiste-default.jpg';
+?>
+                            <img src="<?= htmlspecialchars($imgPortrait, ENT_QUOTES, 'UTF-8') ?>"
+                                alt="Exemple de photo portrait" class="bloc-visuel"></img>
                         </div>
                 </article>
 
                 <article class="bloc-comparatif inverse">
                     <h4 class="lato-regular">Intimiste</h3>
                         <div class="bloc-texte">
-                            <img src="../../../assets/photos/23A805A5-4FA0-465B-B985-D23265BD768E.jpeg"
-                                class="bloc-visuel"></img>
+                            <img src="<?= htmlspecialchars($imgIntimiste, ENT_QUOTES, 'UTF-8') ?>"
+                                alt="Exemple de photo intimiste" class="bloc-visuel"></img>
                             <p class="txtcomparatif lato-regular">
                                 Chaque femme est une œuvre d’art. À travers mes séances intimiste,
                                 je célèbre votre beauté, votre force et votre singularité. Mon

@@ -2,15 +2,13 @@
 // auth.php
 declare(strict_types=1);
 session_start();
-require __DIR__ . '../../db.php';
+require __DIR__ . '/../db.php';
 
 // Si pas connecté → renvoyer vers la page du formulaire (index.html)
 if (!isset($_SESSION['pseudo'])) {
     header('Location: ../index.php'); 
     exit;
 }
-declare(strict_types=1);
-require_once "../db.php";
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);

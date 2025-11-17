@@ -71,7 +71,7 @@ require __DIR__ . '/../chemin/images_lien.php';
   ?>
         <section class="gallery-group">
             <h2 class="section-title castoro-titling-regular">
-                Maquillage <?= htmlspecialchars($cat['slug']) ?>
+                Photo <?= htmlspecialchars($cat['slug']) ?>
             </h2>
 
             <div class="gallery-grid">

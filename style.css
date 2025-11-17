@@ -472,8 +472,14 @@ h1 {
 }
 
 /*Hero - Carousel*/
+.carousel-wrapper {
+  width: 100%; /* Prend juste la largeur de l'écran */
+  overflow: hidden; /* COUPE tout ce qui dépasse (c'est la clé !) */
+  position: relative;
+  margin-top: 120px; /* On déplace la marge ici pour garder l'espacement du haut */
+}
 .carousel {
-  margin-top: 120px;
+  /*margin-top: 120px;*/
   overflow: hidden;
   animation: scroll-photos 35s linear infinite;
   display: flex;
@@ -484,15 +490,31 @@ h1 {
 }
 
 .card {
+  /*
   height: auto;
-  width: 490px; /* 
-  border: 5px solid var(--colorB); */
-  border-radius: 130px;
+  width: 490px;  
+  //border: 5px solid var(--colorB); 
+  border-radius: 130px;*/
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
   object-fit: contain;
+  /* La forme de la carte */
+  /* width: 490px; */
+  height: 600px; /* Ajustez la hauteur selon vos goûts */
+  border-radius: 130px; /* L'arrondi se fait ici */
+  overflow: hidden; /* Coupe tout ce qui dépasse de l'arrondi */
+  object-fit: cover;
+  /* Flexbox pour centrer si besoin, mais moins critique ici */
+  flex-shrink: 0; /* Empêche la carte de s'écraser dans le carrousel */
+  margin: 0 15px;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* L'image remplit la div parfaitement */
+  display: block; /* Supprime les petits espaces blancs sous les images */
 }
 
 .carousel:hover {
@@ -525,8 +547,8 @@ h1 {
   .card {
     width: 200px;
     height: auto;
-    border-radius: 10px;
-    border: 2px solid var(--colorB);
+    border-radius: 50px;
+    /*border: 2px solid var(--colorB);*/
   }
 
   @keyframes scroll-photos {
@@ -890,6 +912,9 @@ h1 {
   align-items: flex-start;
   flex-direction: row;
   transition: 0.15s;
+}
+.carousels:hover {
+  animation-play-state: paused;
 }
 
 @keyframes scroll-avis {
@@ -1553,8 +1578,7 @@ iframe {
   font-size: 50px;
   margin-bottom: 80px;
 
-  object-fit: contain;
-  height: auto;
+  object-fit: cover;
 }
 
 /* =========================
@@ -1563,6 +1587,7 @@ iframe {
 @media (min-width: 601px) and (max-width: 1500px) {
   .sr-only {
     width: 500px;
+    height: 650px;
   }
 }
 /* =========================
@@ -1570,8 +1595,9 @@ iframe {
    ========================= */
 @media (min-width: 601px) and (max-width: 1500px) and (orientation: portrait) {
   .sr-only {
-    width: 275px;
-    height: auto;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
   }
 }
 /* =========================
@@ -1592,9 +1618,10 @@ iframe {
   }
   .sr-only {
     width: 170px;
-    height: auto;
+    height: 250px;
     border-radius: 10px;
     font-size: 24px;
+    object-fit: cover;
   }
 }
 

@@ -309,6 +309,14 @@ body.admin {
                 </div>
             </section>
         </form>
+        <form action="update_profil_image.php" method="post" enctype="multipart/form-data">
+            <section class="card">
+                <label for="profil_image">Choisir une nouvelle photo :</label>
+                <input type="file" name="profil_image" id="profil_image" accept="image/*" required>
+                <button class="btn btn-wide" type="submit">Mettre à jour</button>
+            </section>
+
+        </form>
         <footer class="page-foot">
             <a class="btn btn-ghost" href="contact.php">Retour</a>
             <button class="btn btn-wide" type="submit" form="profile-form">Enregistrer</button>

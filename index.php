@@ -145,23 +145,29 @@ function public_url_from_db(string $path): string {
 }
 ?>
         <!-- Carrousel photos (cards slider) -->
-        <div class="carousel" aria-label="Galerie photos">
-            <?php 
+        <div class="carousel-wrapper">
+            <div class="carousel" aria-label="Galerie photos">
+                <?php 
               $sql = $pdo->query("SELECT * FROM carousel ORDER BY id");
               ($images = $sql->fetchAll()); 
               foreach ($images as $img): 
               $src = public_url_from_db($img['curent_image_url']);?>
-            <!-- Carrousel photos (cards slider) -->
-            <img class="card" src="<?= htmlspecialchars($src, ENT_QUOTES) ?>"></img>
-            <?php endforeach; ?>
-            <!-- Duplication des photos -->
-            <?php 
+                <!-- Carrousel photos (cards slider) -->
+                <div class="card">
+                    <img src="<?= htmlspecialchars($src, ENT_QUOTES) ?>"></img>
+                </div>
+                <?php endforeach; ?>
+                <!-- Duplication des photos -->
+                <?php 
               $sql = $pdo->query("SELECT * FROM carousel ORDER BY id ASC LIMIT 4");
               ($images = $sql->fetchAll()); 
               foreach ($images as $img):
               $src = public_url_from_db($img['curent_image_url']); ?>
-            <img class="card" src="<?= htmlspecialchars($src, ENT_QUOTES) ?>"></img>
-            <?php endforeach; ?>
+                <div class="card">
+                    <img src="<?= htmlspecialchars($src, ENT_QUOTES) ?>"></img>
+                </div>
+                <?php endforeach; ?>
+            </div>
         </div>
     </section>
 
@@ -170,9 +176,14 @@ function public_url_from_db(string $path): string {
         <h2 class="title_presentation castoro-titling-regular">PRÉSENTATION</h2>
         <span class="subtitle_presentation lato-regular-italic">Mon travail d'artiste consiste à montrer aux femmes la
             beauté en elles qui a toujours existé mais qu'elles n'ont jamais remarqué.</span>
+        <?php
+$stmt = $pdo->query("SELECT profil_image FROM company_profile LIMIT 1");
+$profile = $stmt->fetch(PDO::FETCH_ASSOC);
 
+$image = $profile['profil_image'] ?? 'images/default-profil.jpg'; // fallback
+?>
         <div class="cols">
-            <img src="assets/photos/profil.jpeg" class="portrait">
+            <img src="admin/<?= htmlspecialchars($image) ?>" alt="Photo de profil de Katia Bulimar" class="portrait">
             </img>
 
             <div>
@@ -217,10 +228,27 @@ function public_url_from_db(string $path): string {
         <!-- Vidéo -->
         <div class="video" aria-label="Présentation en vidéo">
             <!-- Remplace l'URL de la vidéo -->
-            <iframe class="VideoYT" width="1060" height="490" src="https://www.youtube.com/embed/QuUlXXPWSxQ"
-                title="Présentation"
+            <?php
+$stmt = $pdo->prepare("SELECT setting_value FROM settings WHERE setting_key = 'homepage_video'");
+$stmt->execute();
+$videoUrl = $stmt->fetchColumn() ?: '';
+
+// Petite fonction pour transformer l’URL en lien embed
+function youtubeToEmbed(string $url): ?string {
+    if (preg_match('~(?:youtu\.be/|youtube\.com/(?:watch\?v=|embed/))([a-zA-Z0-9_-]{11})~', $url, $m)) {
+        return 'https://www.youtube.com/embed/' . $m[1];
+    }
+    return null;
+}
+
+$embedUrl = youtubeToEmbed($videoUrl);
+?>
+
+            <?php if ($embedUrl): ?><iframe class="VideoYT" width="1060" height="490"
+                src="<?= htmlspecialchars($embedUrl, ENT_QUOTES, 'UTF-8') ?>" title="Présentation"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
+            <?php endif; ?>
         </div>
     </section>
     <!-- Prestations -->

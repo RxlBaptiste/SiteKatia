@@ -89,7 +89,7 @@ if (!isset($_SESSION['pseudo'])) {
   ?>
         <section class="gallery-group">
             <h2 class="section-title castoro-titling-regular">
-                Maquillage <?= htmlspecialchars($cat['slug']) ?>
+                Photo <?= htmlspecialchars($cat['slug']) ?>
             </h2>
 
             <div class="gallery-grid">

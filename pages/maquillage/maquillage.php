@@ -118,15 +118,27 @@ require __DIR__ . '/../../admin/db.php';
                                 frais, lumineux et intemporel. Parfait pour celles qui souhaitent rester proches de leur
                                 apparence naturelle.
                             </p>
-                            <img src="../../assets/photos/carousel2.jpeg" class="bloc-visuel"></img>
+                            <?php
+$stmt = $pdo->prepare("
+    SELECT name, image_path
+    FROM maquillage_examples
+    WHERE name IN ('naturel', 'sophistique')
+");
+$stmt->execute();
+$rows = $stmt->fetchAll(PDO::FETCH_KEY_PAIR);
+$imgNaturel     = $rows['naturel']     ?? 'images/maquillage-naturel-default.jpg';
+$imgSophistique = $rows['sophistique'] ?? 'images/maquillage-sophistique-default.jpg';
+?>
+                            <img src="../../admin/pages/maquillage/<?= htmlspecialchars($imgNaturel, ENT_QUOTES, 'UTF-8') ?>"
+                                alt="Exemple de maquillage naturel" class="bloc-visuel"></img>
                         </div>
                 </article>
 
                 <article class="bloc-comparatif inverse">
                     <h4 class="lato-regular">Sophistiqué</h3>
                         <div class="bloc-texte">
-                            <img src="../../assets/photos/23A805A5-4FA0-465B-B985-D23265BD768E.jpeg"
-                                class="bloc-visuel"></img>
+                            <img src="../../admin/pages/maquillage/<?= htmlspecialchars($imgSophistique, ENT_QUOTES, 'UTF-8') ?>"
+                                alt="Exemple de maquillage sophistiqué" class="bloc-visuel"></img>
                             <p class="txtcomparatif lato-regular">
                                 C'est un maquillage plus travillé, plus structuré. Il peut inclure un teint plus
                                 couvrant, des yeux plus définis (eyesliner, smoky, faux cils, lèvres plus marquées...) 
