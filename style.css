@@ -14,6 +14,7 @@ body {
   background-color: #faf7f2;
   color: var(--colorB);
   overflow-x: hidden;
+  width: 100%;
 }
 .castoro-titling-regular {
   font-family: "Castoro Titling", serif;

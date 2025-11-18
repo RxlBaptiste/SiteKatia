@@ -349,11 +349,12 @@ $embedUrl = youtubeToEmbed($videoUrl);
             </div>
             <div class="container-socials">
                 <div class="socials" aria-label="Réseaux sociaux">
-                    <a href="#" aria-label="Instagram">
+                    <a href="https://www.instagram.com/katia.bulimar?igsh=bmoxYzF1bDNlb3F5&utm_source=qr"
+                        aria-label="Instagram">
                         <!-- Instagram (simple) -->
                         <img class="icon insta" src="../../assets/icons8-instagram-96.png" />
                     </a>
-                    <a href="#" aria-label="Facebook">
+                    <a href="https://www.facebook.com/share/1Fx32vq1Sn/?mibextid=wwXIfr" aria-label="Facebook">
                         <!-- Facebook (simple) -->
                         <img class="icon f" src="../../assets/icons8-facebook-96.png" />
                     </a>

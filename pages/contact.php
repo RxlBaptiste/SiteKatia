@@ -90,7 +90,7 @@ $profile = $pdo->query("SELECT * FROM company_profile WHERE id = 1")->fetch(PDO:
         <section class="comparatifs sections_sociaux">
             <h2 class="lora suivre">Suivez-moi aussi sur les réseaux :</h2>
             <div class="socials-contact" aria-label="Réseaux sociaux">
-                <a href="#" aria-label="Facebook">
+                <a href="https://www.facebook.com/share/1Fx32vq1Sn/?mibextid=wwXIfr" aria-label="Facebook">
                     <img class="icon f" src="../assets/icons8-facebook-96.png" alt="Facebook" />
                 </a>
                 <a href="#" aria-label="Instagram">
@@ -127,10 +127,11 @@ $profile = $pdo->query("SELECT * FROM company_profile WHERE id = 1")->fetch(PDO:
 
         <div class="container-socials">
             <div class="socials" aria-label="Réseaux sociaux">
-                <a href="#" aria-label="Instagram">
+                <a href="https://www.instagram.com/katia.bulimar?igsh=bmoxYzF1bDNlb3F5&utm_source=qr"
+                    aria-label="Instagram">
                     <img class="icon insta" src="../assets/icons8-instagram-96.png" alt="Instagram" />
                 </a>
-                <a href="#" aria-label="Facebook">
+                <a href="https://www.facebook.com/share/1Fx32vq1Sn/?mibextid=wwXIfr" aria-label="Facebook">
                     <img class="icon f" src="../assets/icons8-facebook-96.png" alt="Facebook" />
                 </a>
             </div>
