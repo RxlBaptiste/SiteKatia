@@ -140,7 +140,7 @@ $imgSophistique = $rows['sophistique'] ?? 'images/maquillage-sophistique-default
                             <img src="../../admin/pages/maquillage/<?= htmlspecialchars($imgSophistique, ENT_QUOTES, 'UTF-8') ?>"
                                 alt="Exemple de maquillage sophistiqué" class="bloc-visuel"></img>
                             <p class="txtcomparatif lato-regular">
-                                C'est un maquillage plus travillé, plus structuré. Il peut inclure un teint plus
+                                C'est un maquillage plus travaillé, plus structuré. Il peut inclure un teint plus
                                 couvrant, des yeux plus définis (eyesliner, smoky, faux cils, lèvres plus marquées...) 
                                 Il reste élégant, mais avec un effet plus "glam" ou affirmé.
                             </p>

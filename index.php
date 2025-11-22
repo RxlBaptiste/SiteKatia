@@ -156,28 +156,30 @@ function public_url_from_db(string $path): string {
 }
 ?>
         <!-- Carrousel photos (cards slider) -->
-        <div class="carousel-wrapper">
-            <div class="carousel" aria-label="Galerie photos">
-                <?php 
+        <div class="carousel-super-mark">
+            <div class="carousel-wrapper">
+                <div class="carousel" aria-label="Galerie photos">
+                    <?php 
               $sql = $pdo->query("SELECT * FROM carousel ORDER BY id");
               ($images = $sql->fetchAll()); 
               foreach ($images as $img): 
               $src = public_url_from_db($img['curent_image_url']);?>
-                <!-- Carrousel photos (cards slider) -->
-                <div class="card">
-                    <img class="card" src="<?= htmlspecialchars($src, ENT_QUOTES) ?>"></img>
-                </div>
-                <?php endforeach; ?>
-                <!-- Duplication des photos -->
-                <?php 
+                    <!-- Carrousel photos (cards slider) -->
+                    <div class="card">
+                        <img class="card" src="<?= htmlspecialchars($src, ENT_QUOTES) ?>"></img>
+                    </div>
+                    <?php endforeach; ?>
+                    <!-- Duplication des photos -->
+                    <?php 
               $sql = $pdo->query("SELECT * FROM carousel ORDER BY id ASC LIMIT 4");
               ($images = $sql->fetchAll()); 
               foreach ($images as $img):
               $src = public_url_from_db($img['curent_image_url']); ?>
-                <div class="card">
-                    <img class="card" src="<?= htmlspecialchars($src, ENT_QUOTES) ?>"></img>
+                    <div class="card">
+                        <img class="card" src="<?= htmlspecialchars($src, ENT_QUOTES) ?>"></img>
+                    </div>
+                    <?php endforeach; ?>
                 </div>
-                <?php endforeach; ?>
             </div>
         </div>
     </section>

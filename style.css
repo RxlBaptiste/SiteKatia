@@ -473,6 +473,15 @@ h1 {
 }
 
 /*Hero - Carousel*/
+html,
+body {
+  overflow-x: hidden; /* Pour être sûr que le body ne scroll pas */
+}
+.carousel-super-mark {
+  width: 100vw;
+  overflow: hidden; /* iOS respecte mieux l'overflow sur un conteneur non-body */
+  position: relative;
+}
 .carousel-wrapper {
   width: 100%; /* Prend juste la largeur de l'écran */
   overflow: hidden; /* COUPE tout ce qui dépasse (c'est la clé !) */
@@ -482,6 +491,7 @@ h1 {
 .carousel {
   /*margin-top: 120px;*/
   overflow: hidden;
+  will-change: transform;
   animation: scroll-photos 35s linear infinite;
   display: flex;
   width: calc(600px * 10);
